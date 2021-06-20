@@ -8,16 +8,17 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <main>
-    <Header />
-    <BrowserRouter>
-    <Switch>
-      <Route exact path='/' component={Search} />
-      <Route exact path='/saved' component={Saved} />
-      </Switch>
-    </BrowserRouter>
-    <Footer />
-    </main>
+    <>
+    
+      <Header />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/' component={Search} />
+          <Route exact path='/saved' component={Saved} />
+        </Switch>
+      </BrowserRouter>
+      <Footer />
+    </>
   );
 }
 

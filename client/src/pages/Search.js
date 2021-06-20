@@ -1,15 +1,13 @@
 import React from 'react';
 import SearchBar from '../components/SearchBar'
+import {Container} from '@material-ui/core/'
 
 function Search() {
 
     return (
-        <div>
-        <p>
-            this is my search page
-        </p>
-        <SearchBar />
-        </div>
+        <Container>
+            <SearchBar />
+        </Container>
     )
 }
 
