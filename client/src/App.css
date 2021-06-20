@@ -3,6 +3,10 @@
 
 /*main styles*/
 
+.MuiContainer-root {
+  text-align: center;
+  width: 90vw;
+}
 
 /*footer styles*/
 footer {

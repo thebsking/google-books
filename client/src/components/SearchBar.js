@@ -1,19 +1,28 @@
 import React from 'react';
-import LibraryBooks from '@material-ui/icons/LibraryBooks';
+import BookSharp from '@material-ui/icons/BookSharp';
 import { InputAdornment } from '@material-ui/core';
-import { Button, TextField } from '@material-ui/core';
+import { Button, Input, makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles((theme) => ({
+    input: {
+        marginLeft: theme.spacing(2),
+        marginRight: theme.spacing(1),
+        marginTop: theme.spacing(1),
+        width: '80ch',
+    },
+}))
 
 const SearchBar = () => {
+    const classes = useStyles();
     return (
         <form className='noValidate autoComplete="on"'>
-            <TextField id='book-search' label='Search' variant='outlined' InputProps={{
-                startAdornment: (
-                    <InputAdornment position='start'>
-                        <LibraryBooks />
-                    </InputAdornment>
-                )
-            }}/>
-            <Button onClick={(term) => console.log(term)}>
+            <Input className={classes.input} id='book-search' placeholder='search' label='Search' startAdornment={
+            <InputAdornment position='start'>
+                <BookSharp/>
+            </InputAdornment>
+            }
+            InputProps={{'aria-label': 'search-box',}}/>
+            <Button variant="contained" color='primary' onClick={(term) => console.log(term)}>
                 search
             </Button>
         </form>
