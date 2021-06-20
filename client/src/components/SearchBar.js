@@ -18,11 +18,10 @@ const SearchBar = () => {
     const handleSearch=(event)=> {
         event.preventDefault();
         let query = document.getElementById('book-search');
-        console.log(API.searchGoogle(query.value))
         API.searchGoogle(query.value)
             .then(res => console.log(res))
             .catch(err => console.log(err));
-        query = '';
+        query.value = '';
     }
     return (
         <form className='noValidate autoComplete="on"'>
