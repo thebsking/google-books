@@ -17,7 +17,12 @@ const SearchBar = () => {
     const classes = useStyles();
     const handleSearch=(event)=> {
         event.preventDefault();
-        API.searchGoog(event.target.value);
+        let query = document.getElementById('book-search');
+        console.log(API.searchGoogle(query.value))
+        API.searchGoogle(query.value)
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
+        query = '';
     }
     return (
         <form className='noValidate autoComplete="on"'>
@@ -26,7 +31,7 @@ const SearchBar = () => {
                 <BookSharp/>
             </InputAdornment>
             }
-            InputProps={{'aria-label': 'search-box',}}/>
+           />
             <Button variant="contained" type='submit' color='primary' onClick={handleSearch}>
                 search
             </Button>
