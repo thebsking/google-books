@@ -31,9 +31,11 @@ const seedData = [
         link: 'http://books.google.com/books?id=zpvysRGsBlwC&printsec=frontcover&dq=order+of+the+pheonix&hl=&cd=1&source=gbs_api',
     }
 ];
+
 db.Book.deleteMany({})
-.then(()=> {db.Book.collection.insertMany(seedData); console.log('i ran')})
+.then(()=> {db.Book.collection.insertMany(seedData)})
 .then((data) => {
+    console.log(data)
     console.log (data.result.n + ' records inserted')
     process.exit(0);
 })
