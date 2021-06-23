@@ -4,6 +4,7 @@ import {Container} from '@material-ui/core/'
 
 function Search() {
 
+
     return (
         <Container>
             <SearchBar />

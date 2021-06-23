@@ -9,8 +9,8 @@ function Header() {
                 <Toolbar className="top-bar">
                     <p>BK Books</p>
                     <div id="btn-container">
-                    <Button>Search</Button>
-                    <Button>Saved</Button>
+                    <Button href='/'>Search</Button>
+                    <Button href='/saved'>Saved</Button>
                     </div>
                 </Toolbar>
             </AppBar>
