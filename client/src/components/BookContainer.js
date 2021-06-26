@@ -1,18 +1,18 @@
 import React from 'react';
 import BookItem from './BookItem';
 
-function BookContainer(props) {
+function BookContainer({props}) {
+    let array = props
     return (
-        [...props].map((book) => {
-            console.log('book');
-           return  <BookItem
-                title={book.volumeInfo.title}
-                authors={book.volumeInfo.authors}
-                description={book.volumeInfo.description}
-                image={book.volumeInfo.imageLinks.thumbnail}
-                link={book.volumeInfo.infoLink}
-            />
-        })
+           array.map((book)=> {
+           return <BookItem
+                title={book.title}
+                authors={book.authors}
+                description={book.description}
+                image={book.image}
+                link={book.link}
+            />})
+        
         )
 }
 

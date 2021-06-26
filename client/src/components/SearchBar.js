@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import BookSharp from '@material-ui/icons/BookSharp';
 import { InputAdornment } from '@material-ui/core';
 import { Button, Input as TextField, makeStyles } from '@material-ui/core';
-import BookContainer from './BookContainer';
+import ResultsContainer from './ResultsContainer';
 import API from '../utils/API';
 
 
@@ -15,16 +15,17 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
+
+
 const SearchBar = () => {
+    const [results, setResults] = useState([]);
     const classes = useStyles();
     const handleSearch = (event) => {
         event.preventDefault();
         let query = document.getElementById('book-search');
         API.searchGoogle(query.value)
             .then(res => {
-                let resultsArray = res.data.items;
-                console.log(resultsArray)
-                return <BookContainer query={[...resultsArray]} />
+                setResults(res.data.items);
             })
             .catch(err => console.log(err));
         query.value = '';
@@ -42,8 +43,17 @@ const SearchBar = () => {
                     search
                 </Button>
             </form>
-        </>
-    )
-}
 
-export default SearchBar;
+            {results.length ? (
+                <>
+                <h3>Results</h3>
+                <ResultsContainer props={results} />
+                </>
+            ) : (
+            <></>
+            )}
+            </>
+            )
+            }
+
+            export default SearchBar;
