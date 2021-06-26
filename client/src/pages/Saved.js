@@ -3,7 +3,7 @@ import { Container } from '@material-ui/core'
 import BookContainer from '../components/BookContainer';
 import axios from 'axios';
 
-let array =[]
+let array = []
 
 function Saved() {
   const [favs, setFavs] = useState([]);
