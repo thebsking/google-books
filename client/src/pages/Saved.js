@@ -13,14 +13,14 @@ function Saved() {
   function renderBooks() {
     axios.get('/api/books')
       .then((res) => {
-        setFavs(...res.data)
-        
+        setFavs([...res.data])
+        console.log(favs)
       })
       .catch(err => console.log(err))
   }
-  array = [favs];
+  array = favs;
   return (
-    
+    console.log(array),
     <Container id='my-favorites'>
       <h1>My Saved Books</h1>
       {array.length ? (
