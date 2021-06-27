@@ -7,7 +7,7 @@ A React powered web app allowing the user to search the Google Books collection 
 `HTML, CSS, JavaScript, NodeJs, React, JSX, Express, MongoDB`
 
 ## Preview
-
+![preview](./preview.gif)
 
 ## Links
 [Repository](https://github.com/thebsking/google-books)

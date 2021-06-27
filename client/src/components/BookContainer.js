@@ -21,7 +21,7 @@ function BookContainer({ props }) {
                             method: 'DELETE',
                         })
                             .then(res => res.json())
-                            .then(document.location.reload)
+                            .then(window.location.reload.bind(window.location))
                             .catch(err => console.log(err))
                     }}
                 />
